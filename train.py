@@ -157,17 +157,13 @@ def train():
             if i % args.step_interval_to_print == 0:
                 logging.info(' train [%d: %d/%d] BatchTime = %.3f(s) DataTime = %.3f(s), loss_type: %s, fine_loss: %f, total_loss: %f, lr: %f' %
                              (epoch, i, train_num / args.batch_size, batch_time, data_time, args.loss, loss2.mean().item(), net_loss.mean().item(), optimizer.param_groups[0]['lr']) + ' alpha: ' + str(alpha))
-            #val(net, epoch, val_loss_meters, dataloader_test, best_epoch_losses, test_num)
+
         if epoch % args.epoch_interval_to_save == 0:
             save_model('%s/network.pth' % log_dir, net, net_d=net_d)
             logging.info("Saving net...")
 
-        #if epoch % args.epoch_interval_to_val == 0 or epoch == args.nepoch - 1:
-        if epoch < 39 and epoch % 5 == 0:
+        if epoch % args.epoch_interval_to_val == 0 or epoch == args.nepoch - 1:
             val(net, epoch, val_loss_meters, dataloader_test, best_epoch_losses, test_num)
-        elif epoch > 39 and epoch % args.epoch_interval_to_val == 0:
-            val(net, epoch, val_loss_meters, dataloader_test, best_epoch_losses, test_num)
-      
 
 
 def val(net, curr_epoch_num, val_loss_meters, dataloader_test, best_epoch_losses, test_num):
