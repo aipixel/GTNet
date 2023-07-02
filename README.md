@@ -5,9 +5,7 @@
 
 
 ## [GTNet]
-This repository contains the PyTorch implementation of the paper:
-
-**Learning Geometric Transformation for Point Cloud Completion**
+This repository contains the source code for the paper [Learning Geometric Transformation for Point Cloud Completion](https://link.springer.com/article/10.1007/s11263-023-01820-y)
 
 
 ### Installation
