@@ -1,6 +1,6 @@
 # *GTNet * 
 <p align="center"> 
-<img src="images/GTNet-Overview.pdf">
+<img src="images/GTNet-Overview.png">
 </p>
 
 
