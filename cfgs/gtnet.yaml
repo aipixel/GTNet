@@ -31,6 +31,7 @@ knn: 32
 local_feature_dim: 128
 global_feature_dim: 512
 sample_ratio: 0.25
+# 4 for 2048/4096 points, 8 for 8192 points, and 16 for 16384 points
 up_ratio: 4
 # test
 save_vis: False
