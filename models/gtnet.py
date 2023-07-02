@@ -501,4 +501,4 @@ class Model(nn.Module):
         else:
             emd = calc_emd(out2, gt, eps=0.004, iterations=3000)
             cd_p, cd_t, f1 = calc_cd(out2, gt, calc_f1=True)
-            return {'out1': out1, 'out2': out2, 'emd': cd_p, 'cd_p': cd_p, 'cd_t': cd_t, 'f1': f1}
+            return {'out1': out1, 'out2': out2, 'emd': emd, 'cd_p': cd_p, 'cd_t': cd_t, 'f1': f1}
