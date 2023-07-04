@@ -457,7 +457,7 @@ class DRN(nn.Module):
         
         fine = self.foldingnet(coarse, coarse_features, global_feats, grid_feats)
 
-        return fine
+        return coarse, fine
         
         
 class Model(nn.Module):
@@ -479,8 +479,8 @@ class Model(nn.Module):
            
     def forward(self, pos, gt, is_training=True, alpha=None):
         f_local, f_global = self.encoder(pos)
-        out1, coarse_features = self.decoder(pos, f_local, f_global)
-        out2 = self.detail_refinement(out1, coarse_features, f_global)
+        coarse, coarse_features = self.decoder(pos, f_local, f_global)
+        out1, out2 = self.detail_refinement(coarse, coarse_features, f_global)
              
         out1 = out1.transpose(1, 2).contiguous()
         out2 = out2.transpose(1, 2).contiguous()
