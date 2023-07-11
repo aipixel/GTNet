@@ -22,7 +22,7 @@ class Compose(object):
             transform = tr['callback']
             objects = tr['objects']
             rnd_value = np.random.uniform(0, 1)
-            scare_value = np.random.randint(90, 110) * 0.01
+            scare_value = np.random.randint(80, 120) * 0.01
             for k, v in data.items():
                 if k in objects and k in data:
                     if transform.__class__ in [ScalePoints]:

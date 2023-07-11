@@ -80,7 +80,7 @@ def train():
     if cascade_gan:
         optimizer_d = optim.Adam(net_d.parameters(), lr=lr_d, weight_decay=0.00001, betas=(0.5, 0.999))
 
-    #scheduler = optim.lr_scheduler.OneCycleLR(optimizer, max_lr=lr*2, total_steps=args.nepoch)
+    #scheduler = optim.lr_scheduler.OneCycleLR(optimizer,max_lr=lr*10, steps_per_epoch=len(dataloader), epochs=args.nepoch)
     scheduler = optim.lr_scheduler.OneCycleLR(optimizer, max_lr=lr*5, steps_per_epoch=len(dataloader), epochs=args.nepoch)
 
     alpha = None
